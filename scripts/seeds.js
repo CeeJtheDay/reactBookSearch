@@ -1,7 +1,7 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:Password1@ds217548.mlab.com:17548/heroku_74zqpjgq", {
   useNewUrlParser: true,
   useFindAndModify: false
 });
