@@ -34,7 +34,7 @@ const deleteBook = () => {
 
   return (
       <Container className="propsContainer">
-          <Row className="justify-content-around">
+          <Row className="title-row justify-content-around">
             <Col md={8}>
                 <h2>
                     {props.title}

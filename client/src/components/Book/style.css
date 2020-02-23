@@ -1,0 +1,23 @@
+.propsContainer {
+    margin: 10px;
+    border: solid 1px grey;
+    padding: 20px;
+}
+
+.title-row {
+    background-color: steelblue;
+}
+
+.view {
+    background-color: lightgrey;
+    color: black;
+}
+
+.save {
+    background-color: lightgrey;
+    margin: 5px;
+    text-align: center;
+    color: black;
+    height: auto;
+
+}
