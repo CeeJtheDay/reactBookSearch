@@ -1,12 +1,28 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import API from "../../utils/API";
 import "./style.css";
 
-const props = (props) => {
+const Book = (props) => {
 
-  const makeBookLink = (link) => {
+const makeBookLink = (link) => {
+    //   return () => console.log(link);
       return () => window.location.href = link;
     }  
+
+    const postBook = () => {
+        const body = {
+            title: props.title,
+            authors: props.authors,
+            description: props.description,
+            image: props.image,
+            link: props.link
+        }
+        return () => {
+            API.saveBook(body)
+            .then(result => console.log("saveBook Res", result))
+        }
+}
 
   return (
       <Container className="propsContainer">
@@ -20,14 +36,17 @@ const props = (props) => {
                 </h5>
             </Col>
             <Col md={2}>
-                <Button className="view"
+                <Button 
+                className="view"
                 onClick={makeBookLink(props.link)} >View</Button>
-                <Button className="save">Save</Button>
+                <Button 
+                className="save"
+                onClick={postBook()}>Save</Button>
             </Col>
           </Row>
           <Row>
               <Col md={3}>
-                {props.thumbnail}
+                <img src={props.image} alt="book"/>
               </Col>
               <Col md={9}>
                  {props.description}
@@ -38,4 +57,4 @@ const props = (props) => {
   );
 }
 
-export default props;
+export default Book;

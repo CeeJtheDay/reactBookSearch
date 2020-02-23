@@ -30,14 +30,13 @@ function App() {
   }
   
   const renderBook = (book) => {
-    console.log(book)
      let renderedBook =  
      <Book 
      key={book.id}
      title={book.volumeInfo.title}
      authors={book.volumeInfo.authors}
-     link={book.volumeInfo.imageLinks.infoLink}
-     thumbnail={book.volumeInfo.thumbnail}
+     link={book.volumeInfo.infoLink}
+     image={book.volumeInfo.imageLinks.thumbnail}
      description={book.volumeInfo.description}
      />;
      return renderedBook;

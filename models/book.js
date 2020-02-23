@@ -10,7 +10,7 @@ const BookSchema = new Schema({
   },
 
   authors: {
-    type: String,
+    type: Array,
     trim: true,
     required: "Authors is Required"
   },
@@ -23,7 +23,6 @@ const BookSchema = new Schema({
 
   image: {
     type: String,
-    unique: true,
     required: "Image is Required"
   },
   link: {
