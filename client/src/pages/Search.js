@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import API from "../utils/API";
 import Title from "../components/Title";
 import SearchBar from "../components/SearchBar";
 import Book from "../components/Book";
 import { Container } from "react-bootstrap";
+// import SearchPageContext from "../utils/PageContext";
 
 function Search() {
   const [search, setSearch]= useState("");
-  let [books, setBooks]= useState([]);
+  const [books, setBooks]= useState([]);
+//   const { searchPage, setSearchPage } = React.useContext(SearchPageContext);
+
+    useEffect(() => {
+        // setSearchPage(!searchPage);
+    })
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -29,8 +35,10 @@ function Search() {
   }
   
   const renderBook = (book) => {
+     let searchPage = true;
      let renderedBook =  
      <Book 
+     searchpage = {searchPage}
      key={book.id}
      title={book.volumeInfo.title}
      authors={book.volumeInfo.authors}

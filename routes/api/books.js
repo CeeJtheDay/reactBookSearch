@@ -4,16 +4,23 @@ const booksController = require("../../controllers/booksController");
 // Matches with "/api/books" DB routes
 router
   .route("/")
-  // .get(booksController.findAll)
   .post(booksController.create);
+  
+// Matches with "/api/books/saved"
+router
+  .route("/saved")
+  .get(booksController.findAll)
+
+// Matches with "/api/books/saved/:id"
+router
+  .route("/saved/:id")
+  .delete(booksController.remove);
 
 // Google API routes
 router
   .route("/:title")
   .get(booksController.findByTitle)
-// Matches with "/api/books/:id"
-router
-  .route("/:id")
-  // .delete(booksController.remove);
+
+// Matches with "/api/books/saved/:id"
 
 module.exports = router;

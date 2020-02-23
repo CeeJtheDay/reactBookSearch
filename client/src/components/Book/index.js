@@ -6,9 +6,17 @@ import "./style.css";
 const Book = (props) => {
 
 const makeBookLink = (link) => {
-    //   return () => console.log(link);
-      return () => window.location.href = link;
-    }  
+    return () => window.location.href = link;
+};  
+
+const deleteBook = () => {
+   return () => {
+       console.log("DELETE", props.id);
+        API.deleteBook(props.id)
+        .then(result => console.log("Deleted Book", result)
+        );
+    }
+};
 
     const postBook = () => {
         const body = {
@@ -20,9 +28,9 @@ const makeBookLink = (link) => {
         }
         return () => {
             API.saveBook(body)
-            .then(result => console.log("saveBook Res", result))
+            .then(result => console.log("Saved Book", result));
         }
-}
+};
 
   return (
       <Container className="propsContainer">
@@ -41,7 +49,11 @@ const makeBookLink = (link) => {
                 onClick={makeBookLink(props.link)} >View</Button>
                 <Button 
                 className="save"
-                onClick={postBook()}>Save</Button>
+                onClick=
+                {props.searchpage ? postBook() : deleteBook()}
+                >
+                {props.searchpage ? "Save" : "Delete"}
+                </Button>
             </Col>
           </Row>
           <Row>
