@@ -17,10 +17,12 @@ function Navigate() {
             Google Book Search
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav" //data-setcartmodalshow={setCartModalShow}
-          >
-            <Nav className="mr-auto">
-              <Nav.Link href="#">Saved Books</Nav.Link>
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav>
+              <Nav.Link href="/saved">Saved Books</Nav.Link>
+            </Nav>
+            <Nav>
+              <Nav.Link href="/">Search Books</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Navbar>

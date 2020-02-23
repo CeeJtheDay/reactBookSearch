@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import API from "./utils/API";
-import Title from "./components/Title";
-import SearchBar from "./components/SearchBar";
-import Book from "./components/Book";
+import API from "../utils/API";
+import Title from "../components/Title";
+import SearchBar from "../components/SearchBar";
+import Book from "../components/Book";
 import { Container } from "react-bootstrap";
-import './App.css';
 
 function Search() {
   const [search, setSearch]= useState("");
@@ -45,7 +44,7 @@ function Search() {
   console.log("books", books);
   return (
     <Container className="main">
-     <Title />
+     <Title title= "Google Book Search" sub="Search for, and save books, that you'd like to read!"/>
      <SearchBar handleFormSubmit={handleFormSubmit} handleOnChange={handleOnChange} value={search}/>
      {books.map(book => 
       renderBook(book)
