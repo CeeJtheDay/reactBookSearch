@@ -11,10 +11,9 @@ function Navigate() {
 
   return (
       <Container>
-        <Navbar bg="primary" variant="dark" expand="lg" id="nav" //data-cartmodalshow={cartModalShow} data-setcartmodalshow={setCartModalShow}
-        >
+        <Navbar variant="tabs" id="nav">
           <Navbar.Brand href="#home">
-            Google Book Search
+            G.B.S. <i>navigation</i>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
