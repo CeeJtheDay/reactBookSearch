@@ -1,10 +1,11 @@
 import React from "react";
+import "./style.css";
 
 const SearchForm = ({handleFormSubmit, handleOnChange, value}) => {
   return (
     <form>
-      <div className="form-group">
-        <label htmlFor="search"><i>Find a Book</i>:</label>
+      <div className="form-group searchBox">
+        <label id="find" htmlFor="search"><i>Find a Book</i>:</label>
         <input
           onChange={handleOnChange}
           value={value}
