@@ -21,7 +21,9 @@ if (process.env.NODE_ENV === "production") {
 mongoose.connect(process.env.MONGODB_URI || "mongodb://user:Password1@ds217548.mlab.com:17548/heroku_74zqpjgq", { 
   useNewUrlParser: true ,
   useUnifiedTopology: true
-});
+})
+.then(() => console.log("Mongodb connected"))
+.catch(err => console.log(err));
 // Define API routes here
 app.use(routes);
 

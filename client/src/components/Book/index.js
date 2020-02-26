@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import "./style.css";
 
 const Book = (props) => {
+    
 
 const makeBookLink = (link) => {
     return () => window.location.href = link;
@@ -27,6 +28,7 @@ const deleteBook = () => {
             link: props.link
         }
         return () => {
+            console.log("BODY", body);
             API.saveBook(body)
             .then(result => console.log("Saved Book", result));
         }

@@ -7,6 +7,8 @@ import Navigate from "./components/Navigate"
 
 
 function App() {
+
+  
   
   return (
     <Router>
@@ -15,7 +17,7 @@ function App() {
           <Route path="/" exact component={Search} />
           <Route path="/saved" component={Saved}/>
         </Switch>
-      </Router>
+    </Router>
   );
 }
 

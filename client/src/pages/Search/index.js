@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import API from "../../utils/API";
 import Title from "../../components/Title";
 import SearchBar from "../../components/SearchBar";
@@ -40,12 +40,12 @@ function Search() {
         authors={book.volumeInfo.authors}
         link={book.volumeInfo.infoLink}
         image={book.volumeInfo.imageLinks.thumbnail}
-        description={book.volumeInfo.description}
+        description={book.searchInfo.textSnippet}
       />;
     return renderedBook;
 
   }
-  console.log("books", books);
+  // console.log("books", books);
   return (
     <Container className="main">
       <Title title="Google Book Search" sub="Search for, and save books, that you'd like to read!" />
